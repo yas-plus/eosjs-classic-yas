@@ -13,7 +13,7 @@ const token = require('./schema/eosio.token.abi.json')
 const system = require('./schema/eosio.system.abi.json')
 const eosio_null = require('./schema/eosio.null.abi.json')
 
-const Eos = (config = {}) => {
+const Yas = (config = {}) => {
   const configDefaults = {
     httpEndpoint: 'http://127.0.0.1:8888',
     debug: false,
@@ -39,10 +39,10 @@ const Eos = (config = {}) => {
   return createEos(config)
 }
 
-module.exports = Eos
+module.exports = Yas
 
 Object.assign(
-  Eos,
+  Yas,
   {
     version: '16.0.0',
     modules: {
@@ -58,14 +58,14 @@ Object.assign(
 
     /** @deprecated */
     Testnet: function (config) {
-      console.error('deprecated, change Eos.Testnet(..) to just Eos(..)')
-      return Eos(config)
+      console.error('deprecated, change Yas.Testnet(..) to just Yas(..)')
+      return Yas(config)
     },
 
     /** @deprecated */
     Localnet: function (config) {
-      console.error('deprecated, change Eos.Localnet(..) to just Eos(..)')
-      return Eos(config)
+      console.error('deprecated, change Yas.Localnet(..) to just Yas(..)')
+      return Yas(config)
     }
   }
 )
@@ -107,7 +107,7 @@ function createEos(config) {
       toBuffer,
       abiCache
     },
-    // Repeat of static Eos.modules, help apps that use dependency injection
+    // Repeat of static Yas.modules, help apps that use dependency injection
     modules: {
       format
     }

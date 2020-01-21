@@ -1,7 +1,7 @@
 {
-  "name": "eosjs-classic",
+  "name": "eosjs-classic-yas",
   "version": "16.0.11",
-  "description": "General purpose library for the EOS blockchain.",
+  "description": "General purpose library for the YAS blockchain.",
   "main": "lib/index.js",
   "files": [
     "README.md",
@@ -15,28 +15,28 @@
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
     "build": "rm -fr lib && npm run build_lib && npm run build_browser",
     "build_lib": "babel --copy-files src --out-dir lib",
-    "build_browser": "browserify -o lib/eos.js -s Eos lib/index.js",
+    "build_browser": "browserify -o lib/yas.js -s Yas lib/index.js",
     "build_browser_test": "browserify -o dist/test.js lib/*.test.js",
-    "minimize": "uglifyjs lib/eos.js -o lib/eos.min.js --source-map --compress --mangle",
+    "minimize": "uglifyjs lib/yas.js -o lib/yas.min.js --source-map --compress --mangle",
     "docs": "jsdoc2md src/format.js > docs/format.md",
-    "srisum": "srisum lib/eos.*",
+    "srisum": "srisum lib/yas.*",
     "prepublishOnly": "npm run build && npm run minimize && npm run docs && npm run srisum"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qiushaoxi/eosjs-classic.git"
+    "url": "git+https://github.com/yas-plus/eosjs-classic-yas.git"
   },
   "keywords": [
-    "EOS",
+    "YAS",
     "Blockchain",
     "eosjs"
   ],
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/qiushaoxi/eosjs-classic/issues"
+    "url": "https://github.com/yas-plus/eosjs-classic-yas/issues"
   },
-  "homepage": "https://github.com/qiushaoxi/eosjs-classic#readme",
+  "homepage": "https://github.com/yas-plus/eosjs-classic-yas#readme",
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "6.26.3",
