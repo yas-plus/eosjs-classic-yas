@@ -846,7 +846,7 @@
         },
         {
           "name": "producer_authority",
-          "type": "block_signing_authority$"
+          "type": "block_signing_authority[]"
         }
       ]
     },
